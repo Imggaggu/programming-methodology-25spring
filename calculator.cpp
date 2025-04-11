@@ -32,8 +32,12 @@ int Calculator::sub(int a, int b) {
 int Calculator::mul(int a, int b) {
     // TODO
     int max = std::numeric_limits<int>::max();
+    int min = std::numeric_limits<int>::min(); 
 
-    if ((b > 0) && (a > max / b)){
+    if ((a > max / b)){
+        throw std::overflow_error ("multiply Overflow");
+    } 
+    if ((a < min / b)){
         throw std::overflow_error ("multiply Overflow");
     } 
 
