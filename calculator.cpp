@@ -7,16 +7,22 @@ int Calculator::add(int a, int b) {
     int max = std::numeric_limits<int>::max();
     int min = std::numeric_limits<int>::min(); 
     if ((b > 0) && (a > max - b)){
-        throw std::overflow_error ("input Overflow");
+        throw std::overflow_error ("add Overflow");
     } 
     if((b < 0) && (a < min - b)){
-        throw std::overflow_error ("add Overflow");
+        throw std::overflow_error ("add Underflow");
     }
     return a+b;
 }
 
 int Calculator::sub(int a, int b) {
     // TODO
+    int max = std::numeric_limits<int>::max();
+
+    if ((b < 0) && (a > max + b)){
+        throw std::overflow_error ("substract Overflow");
+    } 
+
     return a - b;
 }
 
