@@ -5,9 +5,13 @@
 int Calculator::add(int a, int b) {
     // TODO
     int max = std::numeric_limits<int>::max();
+    int min = std::numeric_limits<int>::min(); 
     if ((b > 0) && (a > max - b)){
         throw std::overflow_error ("input Overflow");
     } 
+    if((b < 0) && (a < min - b)){
+        throw std::overflow_error ("add Overflow");
+    }
     return a+b;
 }
 
