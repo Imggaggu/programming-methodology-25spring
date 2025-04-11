@@ -18,5 +18,8 @@ int Calculator::mul(int a, int b) {
 
 int Calculator::div(int a, int b) {
     // TODO
+    if ( b==0 ){
+        throw std::invalid_argument("Zero Division Error");
+    }
     return a / b;
 }
